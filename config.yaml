@@ -1,0 +1,7 @@
+name: tupi
+version: 1
+handle:
+    - rewrite: if(!is_file()) goto "index.php"
+    - compress: if(out_header["Content-Length"] >= 10240) compress
+    - compress: if(out_header["Content-Type"] ~ "text") compress
+    - compress: if(out_header["Content-Type"] ~ "application/javascript") compress
