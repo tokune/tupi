@@ -13,6 +13,7 @@ function getImage($key) {
         if ($type == 'jpg') {
             $type = 'jpeg';
         }
+        
         header("Content-Type: image/$type");  
         header("Last-Modified: " . gmdate("M d Y H:i:s", mktime (0,0,0,1,1,2000)) . ' GMT');  
         
